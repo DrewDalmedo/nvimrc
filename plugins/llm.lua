@@ -1,44 +1,51 @@
+local function is_windows()
+    return vim.loop.os_uname().sysname == "Windows_NT"
+end
+
 return {
-  "jackMort/ChatGPT.nvim",
+  "yetone/avante.nvim",
   event = "VeryLazy",
-  config = function()
-    require("chatgpt").setup({
-      -- this config assumes you have OPENAI_API_KEY environment variable set
-      openai_params = {
-        -- NOTE: model can be a function returning the model name
-        -- this is useful if you want to change the model on the fly
-        -- using commands
-        -- Example:
-        -- model = function()
-        --     if some_condition() then
-        --         return "gpt-4-1106-preview"
-        --     else
-        --         return "gpt-3.5-turbo"
-        --     end
-        -- end,
-        model = "gpt-4o",
-        frequency_penalty = 0,
-        presence_penalty = 0,
-        max_tokens = 4095,
-        temperature = 0.2,
-        top_p = 0.1,
-        n = 1,
-      },
-      extra_curl_params = {
+  lazy = false,
+  version = false,
+  opts = {
+    -- add any opts here
+    provider = "openai",
 
-      },    
-  })
-  end,
-  dependencies = {
-    "MunifTanjim/nui.nvim",
-    "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope.nvim"
+    openai = {
+      model = "gpt-4o"
+    },
   },
-
-  vim.keymap.set("n", "<leader>aii", "<cmd>ChatGPT<cr>"),
-  vim.keymap.set("n", "<leader>aie", "<cmd>ChatGPTRun explain_code<cr>"),
-  vim.keymap.set("n", "<leader>ais", "<cmd>ChatGPTRun summarize<cr>"),
-  vim.keymap.set("n", "<leader>aib", "<cmd>ChatGPTRun fix_bugs<cr>"),
-  vim.keymap.set("n", "<leader>aio", "<cmd>ChatGPTRun optimize_code<cr>"),
-
+  -- Dynamically set the build command based on OS
+  build = is_windows() and
+    "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" or
+    "make",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "stevearc/dressing.nvim",
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "zbirenbaum/copilot.lua",
+    {
+      "HakonHarnes/img-clip.nvim",
+      event = "VeryLazy",
+      opts = {
+        default = {
+          embed_image_as_base64 = false,
+          prompt_for_file_name = false,
+          drag_and_drop = {
+            insert_mode = true,
+          },
+          use_absolute_path = true,
+        },
+      },
+    },
+    {
+      'MeanderingProgrammer/render-markdown.nvim',
+      opts = {
+        file_types = { "markdown", "Avante" },
+      },
+      ft = { "markdown", "Avante" },
+    },
+  },
 }
