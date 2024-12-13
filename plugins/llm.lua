@@ -9,10 +9,16 @@ return {
   version = false,
   opts = {
     -- add any opts here
-    provider = "openai",
+    
+    -- provider = "openai",
+    provider = "claude",
 
     openai = {
       model = "gpt-4o"
+    },
+
+    claude = {
+      model = "claude-3-5-sonnet-20241022"
     },
   },
   -- Dynamically set the build command based on OS
