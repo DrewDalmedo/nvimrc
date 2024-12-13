@@ -1,7 +1,7 @@
 return {
   "NeogitOrg/neogit",
 
-  enabled = true,
+  enabled = false,
 
   dependencies = {
     "nvim-lua/plenary.nvim",         -- required
@@ -10,9 +10,15 @@ return {
     "nvim-telescope/telescope.nvim", -- optional
   },
 
-  config = true,
+  config = function()
+      local neogit = require("neogit")
 
-  vim.keymap.set("n", "<leader>mg", function()
-    require("neogit").open()
-  end),
+      -- configure neogit
+      neogit.setup({})
+
+      -- keybind
+      vim.keymap.set("n", "<leader>mg", function()
+        neogit.open()
+      end)
+  end
 }
