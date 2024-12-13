@@ -17,5 +17,14 @@ if vim.fn.has('win32') == 1 then
     vim.opt.shellxquote = ''
 end
 
+-- enable relative line numbers in Netrw
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'netrw',
+    callback = function()
+        vim.opt_local.relativenumber = true
+        vim.opt_local.number = true
+    end
+})
+
 -- use system clipboard
 vim.api.nvim_set_option("clipboard", "unnamedplus")
