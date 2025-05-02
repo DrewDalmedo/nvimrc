@@ -2,7 +2,7 @@
 vim.keymap.set("n", "<leader>pf", vim.cmd.Ex)
 
 -- ALTERNATIVE TO ESCAPE (for hhkb)
-vim.keymap.set("i", "<C-CR>", "<Esc>")
+vim.keymap.set("i", "<C-;>", "<Esc>")
 
 -- RELOAD NEOVIM CONFIG
 vim.keymap.set("n", "<leader>sr", function()
@@ -16,22 +16,8 @@ vim.keymap.set("n", "<leader>fg", teleBuiltins.live_grep, {})
 vim.keymap.set("n", "<leader>fm", teleBuiltins.man_pages, {})
 
 -- TERMINAL
-local function open_term_bottom()
-    vim.cmd('botright split')
-    vim.cmd('resize 15')
-    vim.cmd('terminal')
-    vim.cmd('startinsert')
-end
-
-local function open_term_tab()
-    vim.cmd('tabnew')
-    vim.cmd('terminal')
-    vim.cmd('startinsert')
-end
-
-vim.keymap.set("n", "<leader>t<CR>", open_term_tab)
-vim.keymap.set("n", "<leader>tb", open_term_bottom)
-vim.keymap.set("t", "<leader>dt", "<C-\\><C-n><CR>")
+-- NOTE: replaced with glacier.nvim
+-- https://github.com/DrewDalmedo/glacier.nvim
 
 
 vim.keymap.set("n", "<leader>cc", "<cmd>cd %:p:h<cr>")    -- set current file directory as working directory
