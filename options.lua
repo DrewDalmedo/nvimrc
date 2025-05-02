@@ -6,8 +6,12 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.termguicolors = false
 
-if vim.g.goneovim then
+if vim.g.neovide then
   vim.o.guifont = "UbuntuMono Nerd Font:h18"
+  vim.opt.termguicolors = true
+  vim.cmd([[ color gruvbox-material ]])
+  -- Toggle fullscreen with F11 in Neovide
+  vim.api.nvim_set_keymap('n', '<F11>', [[<Cmd>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen<CR>]], { noremap = true, silent = true })
 end
 
 -- if on Windows, set the default shell from cmd.exe to bash
