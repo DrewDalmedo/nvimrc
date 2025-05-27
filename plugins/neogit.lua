@@ -14,7 +14,9 @@ return {
       local neogit = require("neogit")
 
       -- configure neogit
-      neogit.setup({})
+      neogit.setup({
+          kind = "replace"
+      })
 
       -- keybind
       vim.keymap.set("n", "<leader>mg", function()
