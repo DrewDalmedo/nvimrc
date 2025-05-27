@@ -19,6 +19,10 @@ vim.keymap.set("n", "<leader>fm", teleBuiltins.man_pages, {})
 -- NOTE: replaced with glacier.nvim
 -- https://github.com/DrewDalmedo/glacier.nvim
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<leader>cc", "<cmd>cd %:p:h<cr>")    -- set current file directory as working directory
 vim.keymap.set("n", "<leader>ch", "<cmd>cd ~<cr>")        -- set home directory as working directory
