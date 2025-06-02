@@ -1,6 +1,4 @@
--- requires the ldr utility from my personal scripts 
--- see https://github.com/DrewDalmedo/scripts
--- WILL NOT WORK ON WINDOWS (unless using some unix compat layer maybe)
+-- jump between project directories
 
 local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
@@ -49,30 +47,78 @@ local function make_telescope_entry(raw)
     end
 end
 
+-- given a directory path, return a list of tables
+local function list_subdirs_with_prefix(parent)
+    local output_table = {}
+
+    local parent_name = vim.fn.fnamemodify(parent, ":t")
+
+    -- glob all immediate subdirectories (trailing slash ensures only dirs)
+    local pattern = vim.fn.escape(parent, "\\") .. "/*/"
+    local raw_list = vim.fn.glob(pattern, false, true)
+
+    for _, dir_with_slash in ipairs(raw_list) do
+        -- remove trailing slash for a clean value
+        local fullpath = dir_with_slash:gsub("/$", "")
+
+        -- get just the subdir's name (basename)
+        local display = vim.fn.fnamemodify(fullpath, ":t")
+
+        table.insert(output_table, make_telescope_entry({
+            value = fullpath,
+            display = display,
+            prefix = parent_name,
+        }))
+    end
+
+    return output_table
+end
+
 -- run ldr, present its output as a telescope picker, then cd into the chosen path
 M.ldr_cd = function(opts)
     opts = opts or {}
     
-    -- TODO: This is terrible! Calling a script a user-defined PATH doesn't 
-    --       work as expected in Neovide, so this hack works for now. Won't 
-    --       work on other machines.
-    --
-    --       Do we even need an external script to select subdirectories 
-    --       within a given project directory..?
-    local ldr_cmd_path = "/Users/codec/tools/ldr"
-    local ldr_lines = vim.fn.systemlist(ldr_cmd_path)
+    local all_entries = {}
 
+    -- manual entries
     local config_dir = vim.fn.stdpath("config") .. "/lua/drew"
+    table.insert(all_entries, make_telescope_entry({
+        value = config_dir,
+        display = "Config",
+        prefix = "Neovim",
+    }))
+    table.insert(all_entries, make_telescope_entry({
+        value = config_dir .. "/options.lua",
+        display = "Options",
+        prefix = "Neovim",
+        file = true,
+    }))
+    table.insert(all_entries, make_telescope_entry({
+        value = config_dir .. "/keybinds.lua",
+        display = "Keybinds",
+        prefix = "Neovim",
+        file = true,
+    }))
 
-    table.insert(ldr_lines, { value = config_dir, display = "Config", prefix = "Neovim" } )
-    table.insert(ldr_lines, { value = config_dir .. "/options.lua", display = "Options", prefix = "Neovim", file = true })
-    table.insert(ldr_lines, { value = config_dir .. "/keybinds.lua", display = "Keybinds", prefix = "Neovim", file = true })
+    -- tracked project directories
+    local home = vim.loop.os_homedir()
 
-    local all_entries = {} 
-    for _, raw in ipairs(ldr_lines) do
-        table.insert(all_entries, make_telescope_entry(raw))
+    local tracked_dirs = {
+        home .. "/Projects",
+        home .. "/Uni",
+        home .. "/Work",
+        home .. "/Documents",
+    }
+
+    for _, dir in ipairs(tracked_dirs) do
+        if vim.fn.isdirectory(dir) == 1 then
+            for _, project_entry in ipairs(list_subdirs_with_prefix(dir)) do
+                table.insert(all_entries, project_entry)
+            end
+        end
     end
 
+    -- show all projects in telescope picker
     pickers.new(opts, {
         prompt_title = "Projects",
         finder = finders.new_table {
