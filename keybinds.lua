@@ -14,6 +14,8 @@ teleBuiltins = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", teleBuiltins.find_files, {})
 vim.keymap.set("n", "<leader>fg", teleBuiltins.live_grep, {})
 vim.keymap.set("n", "<leader>fm", teleBuiltins.man_pages, {})
+-- project selection
+vim.keymap.set("n", "<leader>pd", "<cmd>lua require('drew.custom.project_selecter').ldr_cd()<CR>", { noremap = true, silent = true } )
 
 -- TERMINAL
 -- NOTE: replaced with glacier.nvim
