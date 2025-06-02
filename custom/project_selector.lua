@@ -21,6 +21,7 @@ local function make_telescope_entry(raw)
             -- directory = "/foo/bar",      (the (parent) directory)
             -- display = "bar",             (the name that's displayed by telescope)
             -- prefix = "FOO" or nil,       (the prefix to the name. optional, used for categorization)
+            -- ordinal = "bar" or ...       (how telescope will fuzzy find the entry)
             -- file = true or false         (whether value is a file or directory)
         -- }
         return {
