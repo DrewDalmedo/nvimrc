@@ -51,7 +51,13 @@ end
 -- run ldr, present its output as a telescope picker, then cd into the chosen path
 M.ldr_cd = function(opts)
     opts = opts or {}
-
+    
+    -- TODO: This is terrible! Calling a script a user-defined PATH doesn't 
+    --       work as expected in Neovide, so this hack works for now. Won't 
+    --       work on other machines.
+    --
+    --       Do we even need an external script to select subdirectories 
+    --       within a given project directory..?
     local ldr_cmd_path = "/Users/codec/tools/ldr"
     local ldr_lines = vim.fn.systemlist(ldr_cmd_path)
 
