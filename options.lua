@@ -5,6 +5,9 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
+vim.opt.autoindent = true   -- on by default in nvim, good to explicitly enable anyways
+vim.opt.smartindent = true
+
 vim.opt.termguicolors = true 
 
 if vim.g.neovide then
