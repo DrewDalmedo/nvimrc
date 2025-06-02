@@ -64,9 +64,9 @@ M.ldr_cd = function(opts)
 
     local config_dir = vim.fn.stdpath("config") .. "/lua/drew"
 
-    table.insert(ldr_lines, { value = config_dir, display = "Config", prefix = "NVIM" } )
-    table.insert(ldr_lines, { value = config_dir .. "/options.lua", display = "Options", prefix = "NVIM", file = true })
-    table.insert(ldr_lines, { value = config_dir .. "/keybinds.lua", display = "Keybinds", prefix = "NVIM", file = true })
+    table.insert(ldr_lines, { value = config_dir, display = "Config", prefix = "Neovim" } )
+    table.insert(ldr_lines, { value = config_dir .. "/options.lua", display = "Options", prefix = "Neovim", file = true })
+    table.insert(ldr_lines, { value = config_dir .. "/keybinds.lua", display = "Keybinds", prefix = "Neovim", file = true })
 
     local all_entries = {} 
     for _, raw in ipairs(ldr_lines) do
