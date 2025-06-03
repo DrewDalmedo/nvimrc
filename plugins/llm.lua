@@ -9,15 +9,16 @@ return {
   lazy = false,
   version = false,
   opts = {
-    openai = {
-      model = "gpt-4o"
+    providers = {
+      openai = {
+        model = "gpt-4o"
+      },
+
+      claude = {
+        model = "claude-3-5-sonnet-20241022"
+      },
     },
 
-    claude = {
-      model = "claude-3-5-sonnet-20241022"
-    },
-
-    -- provider = "openai",
     provider = "claude",
   },
   -- Dynamically set the build command based on OS
