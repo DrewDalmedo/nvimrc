@@ -6,6 +6,8 @@ local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 local conf = require("telescope.config").values
 
+local home = vim.loop.os_homedir()
+
 local M = {}
 
 local function make_telescope_entry(raw)
@@ -101,13 +103,12 @@ M.ldr_cd = function(opts)
     }))
 
     -- tracked project directories
-    local home = vim.loop.os_homedir()
-
     local tracked_dirs = {
-        home .. "/Projects",
-        home .. "/Uni",
-        home .. "/Work",
-        home .. "/Documents",
+        home .. "/Projects",        -- projects
+        home .. "/Personal",        -- personal
+        home .. "/Uni",             -- uni
+        home .. "/Work",            -- work
+        home .. "/Documents",       -- general documents folder
     }
 
     for _, dir in ipairs(tracked_dirs) do
