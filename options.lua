@@ -23,8 +23,8 @@ if vim.g.neovide then
     vim.keymap.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
 end
 
--- if on Windows, set the default shell from cmd.exe to bash
-if vim.fn.has('win32') == 1 then
+-- if on Windows and bash is installed, set the default shell from cmd.exe to bash
+if vim.fn.has('win32') == 1 and vim.fn.executable('bash') == 1 then
     vim.opt.shell = 'bash'
     vim.opt.shellcmdflag = '--login -i'
     vim.opt.shellxquote = ''
