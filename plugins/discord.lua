@@ -1,5 +1,6 @@
 return { 
   'IogaMaster/neocord',
+  enabled = true,
   event = "VeryLazy",
   opts = {
     -- General options
