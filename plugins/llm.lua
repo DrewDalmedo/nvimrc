@@ -4,15 +4,11 @@ end
 
 return {
   "yetone/avante.nvim",
+  enabled = true,
   event = "VeryLazy",
   lazy = false,
   version = false,
   opts = {
-    -- add any opts here
-
-    -- provider = "openai",
-    provider = "claude",
-
     openai = {
       model = "gpt-4o"
     },
@@ -20,11 +16,14 @@ return {
     claude = {
       model = "claude-3-5-sonnet-20241022"
     },
+
+    -- provider = "openai",
+    provider = "claude",
   },
   -- Dynamically set the build command based on OS
   build = is_windows() and
-  "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" or
-  "make",
+    "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" or
+    "make",
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     "stevearc/dressing.nvim",
