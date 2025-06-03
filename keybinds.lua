@@ -9,13 +9,6 @@ vim.keymap.set("n", "<leader>sr", function()
   vim.cmd.source({ args = { vim.env.MYVIMRC }, mods = { silent = true } })
 end)
 
--- Telescope
-teleBuiltins = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", teleBuiltins.find_files, {})
-vim.keymap.set("n", "<leader>fg", teleBuiltins.live_grep, {})
-vim.keymap.set("n", "<leader>fm", teleBuiltins.man_pages, {})
-vim.keymap.set("n", "<leader>pd", "<cmd>lua require('drew.custom.project_selector').ldr_cd()<CR>", { noremap = true, silent = true } )
-
 -- Terminal
 -- NOTE: replaced with glacier.nvim
 -- https://github.com/DrewDalmedo/glacier.nvim
