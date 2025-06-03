@@ -1,37 +1,39 @@
--- NETRW
+-- Netrw
 vim.keymap.set("n", "<leader>pf", vim.cmd.Ex)
 
--- ALTERNATIVE TO ESCAPE (for hhkb)
+-- Alternative to escape (for hhkb)
 vim.keymap.set("i", "<C-;>", "<Esc>")
 
--- RELOAD NEOVIM CONFIG
+-- Reload neovim config
 vim.keymap.set("n", "<leader>sr", function()
   vim.cmd.source({ args = { vim.env.MYVIMRC }, mods = { silent = true } })
 end)
 
--- TELESCOPE
+-- Telescope
 teleBuiltins = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", teleBuiltins.find_files, {})
 vim.keymap.set("n", "<leader>fg", teleBuiltins.live_grep, {})
 vim.keymap.set("n", "<leader>fm", teleBuiltins.man_pages, {})
--- project selection
 vim.keymap.set("n", "<leader>pd", "<cmd>lua require('drew.custom.project_selector').ldr_cd()<CR>", { noremap = true, silent = true } )
 
--- TERMINAL
+-- Terminal
 -- NOTE: replaced with glacier.nvim
 -- https://github.com/DrewDalmedo/glacier.nvim
 
+-- Quick navigation
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- Working directory management
 vim.keymap.set("n", "<leader>cc", "<cmd>cd %:p:h<cr>")    -- set current file directory as working directory
 vim.keymap.set("n", "<leader>ch", "<cmd>cd ~<cr>")        -- set home directory as working directory
 
-vim.keymap.set("n", "<leader>nv", "<cmd>noh<cr>")         -- remove highlighting
+-- Remove highlighting
+vim.keymap.set("n", "<leader>nv", "<cmd>noh<cr>")         
 
--- BUFFER BINDINGS (<leader>b)
+-- Buffer bindings (<leader>b)
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>")              -- next buffer
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>")          -- previous buffer
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")            -- delete buffer
@@ -40,8 +42,7 @@ vim.keymap.set("n", "<leader>bf", ":bfirst<CR>")             -- first buffer
 vim.keymap.set("n", "<leader>be", ":blast<CR>")              -- end (last) buffer
 --vim.keymap.set("n", "<leader>bs", ":w<CR>")                  -- save (write) buffer
 
--- WINDOW BINDINGS (<leader>w)
-
+-- Window bindings (<leader>w)
 vim.keymap.set("n", "<leader>wv", ":vsplit<CR>")             -- vertical split
 vim.keymap.set("n", "<leader>ws", ":split<CR>")              -- horizontal split
 vim.keymap.set("n", "<leader>wh", "<C-w>h")                  -- move to left window
@@ -70,10 +71,10 @@ vim.keymap.set("n", "<leader>w.", ":vertical resize +5<CR>") -- increase width
 vim.keymap.set("n", "<leader>w-", ":resize -5<CR>")         -- decrease height
 vim.keymap.set("n", "<leader>w+", ":resize +5<CR>")         -- increase height
 
--- TAB BINDINGS (<leader>t)
+-- Tab bindings (<leader>t)
 
--- new tab
-vim.keymap.set("n", "<leader>tt", function()
+
+vim.keymap.set("n", "<leader>tt", function()                -- new tab
   --":tabnew<CR>"
   vim.cmd('tabnew')
   --vim.cmd('Ex')
