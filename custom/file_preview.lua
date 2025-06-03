@@ -13,7 +13,7 @@ function M.run_preview()
   if cmd then
     vim.cmd(cmd)
   else
-    vim.notify("No preview registered for filetype: " .. ft, vim.log.levels.WARN)
+    vim.notify("No preview registered for filetype: " .. ft, vim.log.levels.ERROR)
   end
 end
 
