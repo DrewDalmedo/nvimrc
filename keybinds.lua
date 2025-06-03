@@ -6,7 +6,7 @@ vim.keymap.set("i", "<C-;>", "<Esc>")
 
 -- RELOAD NEOVIM CONFIG
 vim.keymap.set("n", "<leader>sr", function()
-    vim.cmd.source({ args = { vim.env.MYVIMRC }, mods = { silent = true } })
+  vim.cmd.source({ args = { vim.env.MYVIMRC }, mods = { silent = true } })
 end)
 
 -- TELESCOPE
@@ -54,14 +54,14 @@ vim.keymap.set("n", "<leader>wr", "<C-w>r")                  -- rotate windows
 
 local maximized = false
 vim.keymap.set("n", "<leader>wm", function()
-    if maximized then
-        vim.cmd("wincmd =")
-        maximized = false
-    else
-        vim.cmd("wincmd |")
-        vim.cmd("wincmd _")
-        maximized = true
-    end
+  if maximized then
+    vim.cmd("wincmd =")
+    maximized = false
+  else
+    vim.cmd("wincmd |")
+    vim.cmd("wincmd _")
+    maximized = true
+  end
 end)
 
 -- Resizing windows with easier shortcuts (since HHKB makes arrows harder to reach)
@@ -74,10 +74,10 @@ vim.keymap.set("n", "<leader>w+", ":resize +5<CR>")         -- increase height
 
 -- new tab
 vim.keymap.set("n", "<leader>tt", function()
-    --":tabnew<CR>"
-    vim.cmd('tabnew')
-    --vim.cmd('Ex')
-    teleBuiltins.find_files()
+  --":tabnew<CR>"
+  vim.cmd('tabnew')
+  --vim.cmd('Ex')
+  teleBuiltins.find_files()
 end)                                                        
 vim.keymap.set("n", "<leader>tj", ":tabnext<CR>")           -- next tab (j for down/next)
 vim.keymap.set("n", "<leader>tk", ":tabprevious<CR>")       -- previous tab (k for up/prev)
@@ -89,5 +89,5 @@ vim.keymap.set("n", "<leader>tm", ":tabmove<CR>")           -- move tab
 
 -- Quick tab navigation with numbers 
 for i = 1, 9 do
-    vim.keymap.set("n", "<leader>t" .. i, i .. "gt")        -- go to tab number i
+  vim.keymap.set("n", "<leader>t" .. i, i .. "gt")        -- go to tab number i
 end

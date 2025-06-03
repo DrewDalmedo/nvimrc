@@ -11,16 +11,16 @@ return {
   },
 
   config = function()
-      local neogit = require("neogit")
+    local neogit = require("neogit")
 
-      -- configure neogit
-      neogit.setup({
-          kind = "replace"
-      })
+    -- configure neogit
+    neogit.setup({
+      kind = "replace"
+    })
 
-      -- keybind
-      vim.keymap.set("n", "<leader>mg", function()
-        neogit.open()
-      end)
+    -- keybind
+    vim.keymap.set("n", "<leader>mg", function()
+      neogit.open()
+    end)
   end
 }

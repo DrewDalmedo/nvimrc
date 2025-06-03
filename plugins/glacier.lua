@@ -1,4 +1,4 @@
 return {
-    "DrewDalmedo/glacier.nvim",
-    lazy = false,
+  "DrewDalmedo/glacier.nvim",
+  lazy = false,
 }

@@ -1,5 +1,5 @@
 local function is_windows()
-    return vim.loop.os_uname().sysname == "Windows_NT"
+  return vim.loop.os_uname().sysname == "Windows_NT"
 end
 
 return {
@@ -9,7 +9,7 @@ return {
   version = false,
   opts = {
     -- add any opts here
-    
+
     -- provider = "openai",
     provider = "claude",
 
@@ -23,8 +23,8 @@ return {
   },
   -- Dynamically set the build command based on OS
   build = is_windows() and
-    "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" or
-    "make",
+  "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" or
+  "make",
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     "stevearc/dressing.nvim",

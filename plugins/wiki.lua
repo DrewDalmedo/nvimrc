@@ -1,4 +1,4 @@
 return {
-    "vimwiki/vimwiki",
-    enabled = true,
+  "vimwiki/vimwiki",
+  enabled = true,
 }

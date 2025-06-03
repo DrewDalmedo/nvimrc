@@ -9,5 +9,5 @@ I like neovim and this is my config
 ## Ideas
 
 1. Scratchpad / scratch buffer / dockets that're autosaved
-    - Global docket
-    - Project-specific dockets 
+  - Global docket
+  - Project-specific dockets 
