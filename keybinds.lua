@@ -13,6 +13,13 @@ end)
 -- NOTE: replaced with glacier.nvim
 -- https://github.com/DrewDalmedo/glacier.nvim
 
+-- File previews
+local preview = require("drew.custom.file_preview")
+
+vim.keymap.set("n", "<leader>pp", function()
+  preview.run_preview()
+end)
+
 -- Quick navigation
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
