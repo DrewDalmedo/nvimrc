@@ -1,11 +1,12 @@
 -- required before lazy.nvim bootstrapping
 vim.g.mapleader = ","
 
--- load lazy.nvim
-require("drew.lazy")
+-- general settings
+require("drew.options")
 
 -- keybinds
 require("drew.keybinds")
 
--- other misc settings
-require("drew.options")
+-- load lazy.nvim
+require("drew.lazy")
+
