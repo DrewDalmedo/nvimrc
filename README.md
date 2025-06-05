@@ -11,3 +11,5 @@ I like neovim and this is my config
 1. Scratchpad / scratch buffer / dockets that're autosaved
   - Global docket
   - Project-specific dockets 
+
+2. (glacier) ability to send commands to a new or existing terminal buffer
