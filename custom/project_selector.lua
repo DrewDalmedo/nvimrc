@@ -151,7 +151,7 @@ local function make_telescope_entry(raw)
           vim.cmd("cd " .. vim.fn.fnameescape(entry.directory))
 
           -- either open the selected file in enter netrw
-          vim.cmd(entry.file and "edit " .. vim.fn.fnameescape(entry.value) or "Ex")
+          vim.cmd(entry.file and "edit " .. vim.fn.fnameescape(entry.value) or "Neotree position=current")
         end)
         return true
       end
