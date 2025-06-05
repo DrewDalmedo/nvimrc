@@ -72,13 +72,9 @@ vim.keymap.set("n", "<leader>w-", ":resize -5<CR>")         -- decrease height
 vim.keymap.set("n", "<leader>w+", ":resize +5<CR>")         -- increase height
 
 -- Tab bindings (<leader>t)
-
-
-vim.keymap.set("n", "<leader>tt", function()                -- new tab
-  --":tabnew<CR>"
+vim.keymap.set("n", "<leader>tt", function()
   vim.cmd('tabnew')
-  --vim.cmd('Ex')
-  teleBuiltins.find_files()
+  vim.cmd('Ex')
 end)                                                        
 vim.keymap.set("n", "<leader>tj", ":tabnext<CR>")           -- next tab (j for down/next)
 vim.keymap.set("n", "<leader>tk", ":tabprevious<CR>")       -- previous tab (k for up/prev)
