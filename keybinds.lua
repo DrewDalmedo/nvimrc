@@ -20,6 +20,8 @@ vim.keymap.set("n", "<leader>pp", function()
   preview.run_preview()
 end)
 
+preview.register("python", vim.fn.has("win32") == 1 and "!python %:." or "!python3 %:.")
+
 -- Quick navigation
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
