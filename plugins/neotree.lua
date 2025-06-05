@@ -59,5 +59,9 @@ return {
 
     vim.keymap.set("n", "<leader>ps", "<cmd>Neotree toggle<cr>")
     vim.keymap.set("n", "<leader>pf", "<cmd>Neotree position=current<cr>")
+    vim.keymap.set("n", "<leader>tt", function()
+      vim.cmd("tabnew")
+      vim.cmd("Neotree position=current")
+    end)                                                        
   end
 }
