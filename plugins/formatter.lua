@@ -2,7 +2,7 @@ return {
   -- taken / adapted from
   -- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#lazy-loading-with-lazynvim
   "stevearc/conform.nvim",
-  enabled = false,
+  enabled = true,
   event = { "BufWritePre" },
   cmd = { "ConfirmInfo" },
   keys = {
