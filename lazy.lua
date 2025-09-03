@@ -13,4 +13,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- set up lazy with plugins directory
-require("lazy").setup("codec.plugins")
+require("lazy").setup("drew.plugins")

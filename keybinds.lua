@@ -8,10 +8,10 @@ vim.keymap.set("t", "<C-;>", "<C-\\><C-n><cr>")
 
 -- Terminal
 -- NOTE: replaced with glacier.nvim
--- https://github.com/runicodec/glacier.nvim
+-- https://github.com/DrewDalmedo/glacier.nvim
 
 -- File previews
-local preview = require("codec.custom.file_preview")
+local preview = require("drew.custom.file_preview")
 
 vim.keymap.set("n", "<leader>pp", function()
   preview.run_preview()

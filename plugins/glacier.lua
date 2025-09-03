@@ -7,7 +7,7 @@ if vim.fn.isdirectory(vim.fn.expand("~/Projects/glacier.nvim")) == 1 then
   }
 else
   return {
-    "runicodec/glacier.nvim",
+    "DrewDalmedo/glacier.nvim",
     enabled = true,
   }
 end

@@ -2,17 +2,17 @@
 vim.g.mapleader = ","
 
 -- general settings
-require("codec.options")
+require("drew.options")
 
 -- keybinds
-require("codec.keybinds")
+require("drew.keybinds")
 
 -- graphical client configuration
-require("codec.graphical")
+require("drew.graphical")
 
 -- load lsp
-require("codec.lsp")
+require("drew.lsp")
 
 -- load lazy.nvim
-require("codec.lazy")
+require("drew.lazy")
 

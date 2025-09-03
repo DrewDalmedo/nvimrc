@@ -3,7 +3,7 @@ return {
   ft = "typst",
   lazy = false,
   config = function()
-    local preview = require("codec.custom.file_preview")
+    local preview = require("drew.custom.file_preview")
 
     preview.register("typst", "TypstWatch")
   end,

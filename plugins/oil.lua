@@ -26,7 +26,7 @@ return {
   --config = function()
   --  require("oil").setup()
 
-  --  require("codec.custom.project_selector").setup({
+  --  require("drew.custom.project_selector").setup({
   --    file_browser = "Oil"
   --  })
   --end,

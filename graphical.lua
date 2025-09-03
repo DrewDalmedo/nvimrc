@@ -1,6 +1,6 @@
 -- neovide-specific settings
 if vim.g.neovide ~= nil then
-  vim.o.guifont = "UbuntuMono Nerd Font:h20"
+  vim.o.guifont = "UbuntuMono Nerd Font:h26"
 
   -- Toggle fullscreen with F11 in Neovide
   vim.api.nvim_set_keymap('n', '<F11>', [[<Cmd>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen<CR>]], { noremap = true, silent = true })

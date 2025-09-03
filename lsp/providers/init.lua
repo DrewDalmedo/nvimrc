@@ -1,6 +1,6 @@
 ---@type LSPProvider[]
 return {
-  require("codec.lsp.providers.gopls"),
-  require("codec.lsp.providers.lua_ls"),
-  require("codec.lsp.providers.clangd"),
+  require("drew.lsp.providers.gopls"),
+  require("drew.lsp.providers.lua_ls"),
+  require("drew.lsp.providers.clangd"),
 }

@@ -1,10 +1,10 @@
 local M = {}
 
 -- lsp configuration
-require("codec.lsp.config")
+require("drew.lsp.config")
 
 -- load lsps
-local providers = require("codec.lsp.providers")
-require("codec.lsp.loader").load(providers)
+local providers = require("drew.lsp.providers")
+require("drew.lsp.loader").load(providers)
 
 return M

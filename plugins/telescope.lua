@@ -12,7 +12,7 @@ return {
     vim.keymap.set(
       "n",
       "<leader>pd",
-      "<cmd>lua require('codec.custom.project_selector').ldr_cd()<CR>",
+      "<cmd>lua require('drew.custom.project_selector').ldr_cd()<CR>",
       { noremap = true, silent = true }
     )
   end,

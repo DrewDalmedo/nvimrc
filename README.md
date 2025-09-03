@@ -1,4 +1,4 @@
-# Codec's Neovim Config
+# Drew's Neovim Config
 
 My Neovim config
 

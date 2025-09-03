@@ -19,7 +19,7 @@ if vim.fn.isdirectory(vim.fn.expand("~/Projects/docket.nvim")) == 1 then
   }
 else
   return {
-    "runicodec/docket.nvim",
+    "DrewDalmedo/docket.nvim",
     enabled = true,
     keys = {
       {

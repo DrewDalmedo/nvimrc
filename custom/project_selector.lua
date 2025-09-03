@@ -105,7 +105,7 @@ M.ldr_cd = function(opts)
   local all_entries = {}
 
   -- manual entries
-  local config_dir = vim.fn.stdpath("config") .. "/lua/codec"
+  local config_dir = vim.fn.stdpath("config") .. "/lua/drew"
   local rc_files_dir = nil
   local last_watched_file = nil
 
