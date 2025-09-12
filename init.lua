@@ -1,5 +1,5 @@
 -- required before lazy.nvim bootstrapping
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 -- general settings
 require("drew.options")
