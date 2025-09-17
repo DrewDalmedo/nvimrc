@@ -2,7 +2,7 @@ local home = vim.loop.os_homedir()
 
 local default_config = {
   file_browser = function()
-    if vim.fn.exists(":Oil") == 1 then
+    if vim.fn.exists(":Oil") ~= 0 then
       return "Oil"
     end
 
