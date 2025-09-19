@@ -48,6 +48,12 @@ function M.open(opts, config, projects)
             return
           end
 
+          -- save and close all open buffers
+          vim.cmd("wall")
+          for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+            pcall(vim.api.nvim_buf_delete, buf, { force = true })
+          end
+
           local project = selection.project
           local target_directory = project.type == "file" and vim.fn.fnamemodify(project.path, ":h") or project.path
 
