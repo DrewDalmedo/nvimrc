@@ -1,14 +1,11 @@
 -- Netrw
---vim.keymap.set("n", "<leader>pf", vim.cmd.Ex)
+-- TODO: set up universal registration of file browser command (Ex, Oil, etc)
+-- vim.keymap.set("n", "<leader>pf", vim.cmd.Ex)
 
 -- Alternative to save / write
 vim.keymap.set({ "i", "n", "v" }, "<C-;>", "<cmd>w<cr>")
 -- exit terminal mode
 vim.keymap.set("t", "<C-;>", "<C-\\><C-n><cr>")
-
--- Terminal
--- NOTE: replaced with glacier.nvim
--- https://github.com/DrewDalmedo/glacier.nvim
 
 -- File previews
 local preview = require("drew.custom.file_preview")
@@ -38,25 +35,8 @@ vim.keymap.set("n", "<leader>ch", "<cmd>cd ~<cr>")     -- set home directory as 
 -- Remove highlighting
 vim.keymap.set("n", "<leader>nv", "<cmd>noh<cr>")
 
--- Buffer bindings (<leader>b)
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>")     -- next buffer
-vim.keymap.set("n", "<leader>bp", ":bprevious<CR>") -- previous buffer
-vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")   -- delete buffer
-vim.keymap.set("n", "<leader>bl", ":ls<CR>")        -- list buffers
-vim.keymap.set("n", "<leader>bf", ":bfirst<CR>")    -- first buffer
-vim.keymap.set("n", "<leader>be", ":blast<CR>")     -- end (last) buffer
---vim.keymap.set("n", "<leader>bs", ":w<CR>")                  -- save (write) buffer
-
--- Window bindings (<leader>w)
-vim.keymap.set("n", "<leader>wv", ":vsplit<CR>") -- vertical split
-vim.keymap.set("n", "<leader>ws", ":split<CR>")  -- horizontal split
-vim.keymap.set("n", "<leader>wh", "<C-w>h")      -- move to left window
-vim.keymap.set("n", "<leader>wj", "<C-w>j")      -- move to window below
-vim.keymap.set("n", "<leader>wk", "<C-w>k")      -- move to window above
-vim.keymap.set("n", "<leader>wl", "<C-w>l")      -- move to right window
-vim.keymap.set("n", "<leader>w=", "<C-w>=")      -- equalize window sizes
-vim.keymap.set("n", "<leader>wq", ":q<CR>")      -- close window
-vim.keymap.set("n", "<leader>wr", "<C-w>r")      -- rotate windows
+-- Window bindings 
+vim.keymap.set("n", "<C-q>", ":q<CR>")           -- close window
 
 local maximized = false
 vim.keymap.set("n", "<leader>wm", function()
@@ -77,19 +57,22 @@ vim.keymap.set("n", "<leader>w-", ":resize -5<CR>")          -- decrease height
 vim.keymap.set("n", "<leader>w+", ":resize +5<CR>")          -- increase height
 
 -- Tab bindings (<leader>t)
-vim.keymap.set("n", "<leader>tt", function()
-  vim.cmd("tabnew")
-  vim.cmd("Ex")
-end)
-vim.keymap.set("n", "<leader>tj", ":tabnext<CR>")     -- next tab (j for down/next)
-vim.keymap.set("n", "<leader>tk", ":tabprevious<CR>") -- previous tab (k for up/prev)
-vim.keymap.set("n", "<leader>tq", ":tabclose<CR>")    -- close tab
-vim.keymap.set("n", "<leader>tl", ":tabs<CR>")        -- list tabs
-vim.keymap.set("n", "<leader>tf", ":tabfirst<CR>")    -- first tab
-vim.keymap.set("n", "<leader>te", ":tablast<CR>")     -- end (last) tab
-vim.keymap.set("n", "<leader>tm", ":tabmove<CR>")     -- move tab
-
--- Quick tab navigation with numbers
-for i = 1, 9 do
-  vim.keymap.set("n", "<leader>t" .. i, i .. "gt") -- go to tab number i
-end
+-- TODO: decide whether or not to keep these
+--
+-- vim.keymap.set("n", "<leader>t", function()
+--   vim.cmd("tabnew")
+--   -- TODO: set up universal registration of file browser command (Ex, Oil, etc)
+--   vim.cmd("Oil")
+-- end)
+-- vim.keymap.set("n", "<leader>tj", ":tabnext<CR>")     -- next tab (j for down/next)
+-- vim.keymap.set("n", "<leader>tk", ":tabprevious<CR>") -- previous tab (k for up/prev)
+-- vim.keymap.set("n", "<leader>tq", ":tabclose<CR>")    -- close tab
+-- vim.keymap.set("n", "<leader>tl", ":tabs<CR>")        -- list tabs
+-- vim.keymap.set("n", "<leader>tf", ":tabfirst<CR>")    -- first tab
+-- vim.keymap.set("n", "<leader>te", ":tablast<CR>")     -- end (last) tab
+-- vim.keymap.set("n", "<leader>tm", ":tabmove<CR>")     -- move tab
+-- 
+-- -- Quick tab navigation with numbers
+-- for i = 1, 9 do
+--   vim.keymap.set("n", "<leader>" .. i, i .. "gt") -- go to tab number i
+-- end

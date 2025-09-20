@@ -1,13 +1,8 @@
-if vim.fn.isdirectory(vim.fn.expand("~/Projects/glacier.nvim")) == 1 then
-  return {
-    name = "glacier.nvim",
-    enabled = true,
-    dir = vim.fn.expand("~/Projects/glacier.nvim"),
-    dev = true,
-  }
-else
-  return {
-    "DrewDalmedo/glacier.nvim",
-    enabled = true,
-  }
-end
+return {
+  "DrewDalmedo/glacier.nvim",
+  enabled = true,
+  keys = {
+    { "<leader>t<cr>", false},
+    { "<C-CR>", "<cmd>GlacierToggleTerminalCurrentWin<cr>", desc = "Open the Terminal" },
+  },
+}
