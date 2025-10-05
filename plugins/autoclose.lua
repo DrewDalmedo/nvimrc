@@ -16,6 +16,18 @@ return {
           pair = "<>",
           enabled_filetypes = {"typescriptreact","javascriptreact"},
         },
+        ["$"] = {
+          escape = true,
+          close = true,
+          pair = "$$",
+          enabled_filetypes = {"typst"},
+        },
+        ["*"] = {
+          escape = true,
+          close = true,
+          pair = "**",
+          enabled_filetypes = {"typst"},
+        },
       }
     })
   end,
