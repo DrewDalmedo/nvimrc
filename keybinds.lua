@@ -7,7 +7,11 @@ vim.g.mapleader = " "
 -- map("n", "<leader>pf", vim.cmd.Ex)
 
 -- Alternative to save / write
-map({ "i", "n", "v" }, "<C-;>", "<cmd>w<cr>")
+map({ "n", "v" }, "<C-;>", "<cmd>w<cr>")
+vim.keymap.set("i", "<C-;>", function()
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false) -- return to normal mode
+  vim.cmd("write")
+end, { desc = "Save and return to Normal mode" })
 -- exit terminal mode
 map("t", "<C-;>", "<C-\\><C-n><cr>")
 
