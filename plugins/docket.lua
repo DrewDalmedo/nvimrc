@@ -5,13 +5,13 @@ if vim.fn.isdirectory(vim.fn.expand("~/Projects/docket.nvim")) == 1 then
     dir = vim.fn.expand("~/Projects/docket.nvim"),
     dev = true,
     keys = {
+      --{
+      --  "<leader>dg",
+      --  "<cmd>DocketGlobal<cr>",
+      --  desc = "Open the global docket in a full window",
+      --},
       {
-        "<leader>dg",
-        "<cmd>DocketGlobal<cr>",
-        desc = "Open the global docket in a full window",
-      },
-      {
-        "<leader>df",
+        "<leader>d",
         "<cmd>DocketGlobalFloating<cr>",
         desc = "Open the global docket in a floating window (closed with Esc)",
       },
@@ -22,13 +22,13 @@ else
     "DrewDalmedo/docket.nvim",
     enabled = true,
     keys = {
+      --{
+      --  "<leader>dg",
+      --  "<cmd>DocketGlobal<cr>",
+      --  desc = "Open the global docket in a full window",
+      --},
       {
-        "<leader>dg",
-        "<cmd>DocketGlobal<cr>",
-        desc = "Open the global docket in a full window",
-      },
-      {
-        "<leader>df",
+        "<leader>d",
         "<cmd>DocketGlobalFloating<cr>",
         desc = "Open the global docket in a floating window (closed with Esc)",
       },
