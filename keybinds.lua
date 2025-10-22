@@ -24,6 +24,7 @@ end)
 
 preview.register("python", vim.fn.has("win32") == 1 and "!python %:." or "!python3 %:.")
 preview.register("go", "make")
+preview.register("c", "make run")
 
 -- Quick navigation
 map("n", "<C-d>", "<C-d>zz")
@@ -80,7 +81,7 @@ map("n", "<leader>w+", ":resize +5<CR>")          -- increase height
 -- map("n", "<leader>te", ":tablast<CR>")     -- end (last) tab
 -- map("n", "<leader>tm", ":tabmove<CR>")     -- move tab
 -- 
--- -- Quick tab navigation with numbers
--- for i = 1, 9 do
---   map("n", "<leader>" .. i, i .. "gt") -- go to tab number i
--- end
+-- Quick tab navigation with numbers
+for i = 1, 9 do
+  map("n", "<leader>" .. i, i .. "gt") -- go to tab number i
+end
