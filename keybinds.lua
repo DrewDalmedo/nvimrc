@@ -68,20 +68,20 @@ map("n", "<leader>w+", ":resize +5<CR>")          -- increase height
 -- Tab bindings (<leader>t)
 -- TODO: decide whether or not to keep these
 --
--- map("n", "<leader>t", function()
---   vim.cmd("tabnew")
---   -- TODO: set up universal registration of file browser command (Ex, Oil, etc)
---   vim.cmd("Oil")
--- end)
--- map("n", "<leader>tj", ":tabnext<CR>")     -- next tab (j for down/next)
--- map("n", "<leader>tk", ":tabprevious<CR>") -- previous tab (k for up/prev)
--- map("n", "<leader>tq", ":tabclose<CR>")    -- close tab
--- map("n", "<leader>tl", ":tabs<CR>")        -- list tabs
+map("n", "<leader>t", function()
+  vim.cmd("tabnew")
+  -- TODO: set up universal registration of file browser command (Ex, Oil, etc)
+  --vim.cmd("Oil")
+  vim.cmd("Telescope find_files")
+end)
+map("n", "<C-j>", ":tabnext<CR>")     -- next tab (j for down/next)
+map("n", "<C-k>", ":tabprevious<CR>") -- previous tab (k for up/prev)
 -- map("n", "<leader>tf", ":tabfirst<CR>")    -- first tab
 -- map("n", "<leader>te", ":tablast<CR>")     -- end (last) tab
--- map("n", "<leader>tm", ":tabmove<CR>")     -- move tab
+map("n", "<C-S-j>", ":+tabmove<CR>")     -- move tab right
+map("n", "<C-S-k>", ":-tabmove<CR>")     -- move tab left
 -- 
 -- Quick tab navigation with numbers
 for i = 1, 9 do
-  map("n", "<leader>" .. i, i .. "gt") -- go to tab number i
+  map("n", "<C-" .. i .. ">", i .. "gt") -- go to tab number i
 end
