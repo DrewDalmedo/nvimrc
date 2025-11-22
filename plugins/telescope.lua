@@ -9,8 +9,8 @@ return {
 
     project_selector.setup()
 
-    vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files, {})
-    vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep, {})
+    vim.keymap.set("n", "<leader>fl", telescope_builtin.find_files, {})
+    vim.keymap.set("n", "<leader>fh", telescope_builtin.live_grep, {})
     vim.keymap.set("n", "<leader>fm", telescope_builtin.man_pages, {})
     vim.keymap.set("n", "<leader>pd", project_selector.pick_project, { noremap = true, silent = true })
   end,
