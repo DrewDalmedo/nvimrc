@@ -6,6 +6,21 @@ return {
   opts = {
     keymaps = {
       ["<C-h>"] = false,
+      ["<CR>"] = function()
+        local oil = require("oil")
+        local entry = oil.get_cursor_entry()
+        if not entry then return end
+
+        local name = entry.name
+        local path = oil.get_current_dir() .. name
+        if name:match("%.pdf$") then
+          -- open with zathura in background
+          vim.fn.jobstart({ "open", path }, { detach = true })
+        else
+          -- fallback to default behavior
+          oil.open(path)
+        end
+      end
     },
     view_options = {
       show_hidden = true,
