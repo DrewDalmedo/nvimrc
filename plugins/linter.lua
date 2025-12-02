@@ -5,7 +5,8 @@ return {
     local linter = require("lint")
 
     linter.linters_by_ft = {
-      go = {"golangcilint"}
+      go = {"golangcilint"},
+      python = {"ruff"},
     }
 
     vim.api.nvim_create_autocmd({"BufWritePost"}, {
