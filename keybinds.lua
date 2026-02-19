@@ -74,6 +74,11 @@ map("n", "<leader>t", function()
   --vim.cmd("Oil")
   vim.cmd("Telescope find_files")
 end)
+
+map("n", "<leader>e", function()
+  vim.cmd("enew")
+end)
+
 map("n", "<C-j>", ":tabnext<CR>")     -- next tab (j for down/next)
 map("n", "<C-k>", ":tabprevious<CR>") -- previous tab (k for up/prev)
 -- map("n", "<leader>tf", ":tabfirst<CR>")    -- first tab
