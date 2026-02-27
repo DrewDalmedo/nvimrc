@@ -1,7 +1,9 @@
+-- general quality-of-life
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.cursorline = true
 
+-- expands tabs to spaces
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -9,7 +11,7 @@ vim.opt.shiftwidth = 2
 vim.opt.wrap = true
 vim.opt.linebreak = true
 
-vim.opt.autoindent = true -- on by default in nvim, good to explicitly enable anyways
+vim.opt.autoindent = true 
 vim.opt.smartindent = true
 
 vim.opt.termguicolors = true
