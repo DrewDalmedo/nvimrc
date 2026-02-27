@@ -50,10 +50,7 @@ local default_config = {
   tracked_directories = {
     { name = "Projects", path = home .. "/Projects" },
     { name = "Personal", path = home .. "/Personal" },
-    { name = "Uni", path = home .. "/Uni" },
     { name = "Work", path = home .. "/Work" },
-    { name = "Documents", path = home .. "/Documents" },
-    { name = "RISC-V", path = home .. "/riscv" },
   },
 }
 
