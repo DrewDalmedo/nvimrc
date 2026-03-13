@@ -51,6 +51,7 @@ local default_config = {
     { name = "Projects", path = home .. "/Projects" },
     { name = "Personal", path = home .. "/Personal" },
     { name = "Work", path = home .. "/Work" },
+    { name = "Micobyte", path = home .. "/Micobyte" },
   },
 }
 
