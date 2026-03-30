@@ -1,7 +1,7 @@
 -- general quality-of-life
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.wo.cursorline = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.cursorline = true
 
 -- expands tabs to spaces
 vim.opt.expandtab = true
@@ -19,8 +19,8 @@ vim.opt.termguicolors = true
 -- allow project-level configurations
 vim.opt.exrc = true
 
-vim.o.showtabline = 1  -- Always show tabline (0=never, 1=if multiple tabs, 2=always)
-vim.o.tabline = '%!v:lua.Tabline()'
+vim.opt.showtabline = 1  -- Always show tabline (0=never, 1=if multiple tabs, 2=always)
+vim.opt.tabline = '%!v:lua.Tabline()'
 
 function _G.Tabline()
   local s = ''
