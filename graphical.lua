@@ -1,5 +1,5 @@
 -- universal
-vim.o.guifont = "UbuntuMono Nerd Font:h22"
+vim.o.guifont = "UbuntuMono Nerd Font:h20"
 
 -- neovide specific settings
 if vim.g.neovide ~= nil then
