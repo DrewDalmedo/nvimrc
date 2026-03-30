@@ -60,6 +60,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
     if vim.bo.buftype == "help" then
       vim.cmd("only")
+      vim.opt_local.relativenumber = true
+      vim.opt_local.number = true
     end
   end,
 })
@@ -68,6 +70,8 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "man",
   callback = function()
     vim.cmd("only")
+    vim.opt_local.relativenumber = true
+    vim.opt_local.number = true
   end,
 })
 
