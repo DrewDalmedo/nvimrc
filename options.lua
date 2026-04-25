@@ -54,12 +54,11 @@ vim.api.nvim_create_autocmd('FileType', {
   end
 })
 
--- always only show the help window
+-- show (relative) line numbers in help and man pages
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*.txt",
   callback = function()
     if vim.bo.buftype == "help" then
-      vim.cmd("only")
       vim.opt_local.relativenumber = true
       vim.opt_local.number = true
     end
@@ -69,7 +68,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "man",
   callback = function()
-    vim.cmd("only")
     vim.opt_local.relativenumber = true
     vim.opt_local.number = true
   end,
